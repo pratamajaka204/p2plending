@@ -9,6 +9,8 @@
 
 # User
 
+User.create(name: 'Jaka',  is_active: true )
+
 # Role
 
 # Role.create(name: 'Admin',  is_active: true, id_user: 1 )
