@@ -11,11 +11,16 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+
   def create
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Berhasil di tambahkan"
-      redirect_to users_path
+      redirect_to @user
     else
       flash[:error] =  @user.errors.full_messages.map{|k,v| k}.join("<br/>").html_safe
       render :new
@@ -23,13 +28,22 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to @user
+
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
-  def edit
-  end
 
   private
   	def user_params

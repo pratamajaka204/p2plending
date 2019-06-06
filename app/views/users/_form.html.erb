@@ -1,20 +1,38 @@
-<%= form_for (@user),  html: {class: 'form-horizontal'} do |f| %>
-	
+<%= form_for :user, url: users_path  do |f| %>
+	 
 	<div class="container">
-		<div class="rowspan">
+		<div class="row">
 			<div class="col-md-3">
 				<%=  f.label :name, 'Nama', class: 'control-label'%>
 			</div>
 			<div class="col-md-9">
 				<%=  f.text_field :name, class: 'form-control-lg'%>
-
-			</div>
-			<div class="col-md-12">
-				<%=  f.submit 'Simpan', class: 'btn btn-success' %>
-				
 			</div>
 		</div>
+		
+		<div class="row">
+				<div class="col-md-3">
+					<%=  f.submit 'Simpan', class: 'btn btn-success' %></div>
+				<div class="col-md-9"> 
+					<%=  link_to 'Back', users_path %> </div>
+		</div>
+	
+
+		<div class="row">
+			<div class="col-md-12">
+				 <% if @user.errors.any? %>
+			    <div id="error_explanation">
+			      <h2>
+			        <%= pluralize(@user.errors.count,'') %> Sebagai Berikut :
+			      </h2>
+			      <ul>
+			        <% @user.errors.full_messages.each do |msg| %>
+			          <li><%= msg %></li>
+			        <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+			</div>
+		</div>
+		<% end %>
 	</div>
-
-	<% end %>
-
