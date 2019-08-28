@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Berhasil di tambahkan"
-      redirect_to @user
+      redirect_to action: "index"
     else
       flash[:error] =  @user.errors.full_messages.map{|k,v| k}.join("<br/>").html_safe
       render :new
