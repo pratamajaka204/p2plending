@@ -9,7 +9,7 @@
 
 # User
 
-User.create(name: 'Jaka',  is_active: true )
+User.create(id: 20, name: 'mual', email: 'jaka@gmail',  is_active: true )
 
 # Role
 

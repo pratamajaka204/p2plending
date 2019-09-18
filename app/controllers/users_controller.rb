@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # @user.email.downcase!
+
     if @user.save
       flash[:notice] = "Berhasil di tambahkan"
       redirect_to action: "index"
@@ -47,6 +49,6 @@ class UsersController < ApplicationController
 
   private
   	def user_params
-  		params.require(:user).permit(:name)
+  		params.require(:user).permit(:name, :address, :email)
   	end
 end

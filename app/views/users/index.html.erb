@@ -9,17 +9,20 @@
 		 <div class="col-md-2">
 		 <div class="btn btn-success "> <%= link_to 'Tambah Data', new_user_path %> </div>
 		</div>
-		<% @users.each do |user| %>
-		<table class="table table-hover table-responsive">
-			<tr>
-				<td><%= user.id %></td>
-				<td><%= user.name %></td>
-				<td><%= link_to 'Detail', user_path(user) %></td>
-				<td><%= link_to 'Edit', edit_user_path(user) %></td>
-				<td><%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Apakah Anda Yakin, Menghapus Data ini ??'} %></td>
-				
-			</tr>
-		<% end %>
+    <table class="table table-hover table-striped table-responsive table-bordered">
+     <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Aksi </th>
+      </tr>
+        <% @users.each do |user| %>
+        
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= link_to 'Detail', user_path(user) %> | <%= link_to 'Edit', edit_user_path(user) %> |  <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Apakah Anda Yakin, Menghapus Data ini ??'} %></td>				
+          </tr>
+        <% end %>
 		</table>
 	</div>
 </div>
