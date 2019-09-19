@@ -25,7 +25,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'awesome_print'
 
+#Encrypt menggunakan Gem Bcrypt  
 gem 'bcrypt'
+
+# Pagination 
+gem 'will_paginate', '~> 3.1.0'
+
 
 # menggunakan aset dari font awesome
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
