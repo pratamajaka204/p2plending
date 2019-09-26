@@ -7,20 +7,25 @@
 		<h3>USER</h3>
 		<div class="col-md-10"></div>
 		 <div class="col-md-2">
-		 <div class="btn btn-success "> <%= link_to 'Tambah Data', new_user_path %> </div>
+		 <%= link_to 'Tambah Data', new_user_path, class: "btn btn-success" %> </div>
 		</div>
     <table class="table table-hover table-striped table-responsive table-bordered">
      <tr>
+        <tr><th colspan="6" class="text-center">List User</th></tr>
+        <th>No.</th>
         <th>ID</th>
         <th>Nama</th>
+        <th>Aktif</th>        
         <th>Aksi </th>
       </tr>
-        <% @users.each do |user| %>
-        
+        <% @users.each_with_index do |user, index| %>
+          <% index += +1 %>
           <tr>
+            <td><%= index %></td>
             <td><%= user.id %></td>
             <td><%= user.name %></td>
-            <td><%= link_to 'Detail', user_path(user) %> | <%= link_to 'Edit', edit_user_path(user) %> |  <%= link_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Apakah Anda Yakin, Menghapus Data ini ??'} %></td>				
+            <td><%= user.is_active %></td>
+            <td><%= link_to 'Detail', user_path(user), class: 'fa fa-credit-card' %> | <%= link_to 'Edit', edit_user_path(user), class: 'fa fa-pencil' %> |  <%= link_to 'Delete', user_path(user), class: 'fa fa-trash', method: :delete, data: { confirm: 'Apakah Anda Yakin, Menghapus Data ini ??'} %></td>				
           </tr>
         <% end %>
 		</table>

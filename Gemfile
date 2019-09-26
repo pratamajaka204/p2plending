@@ -28,6 +28,8 @@ gem 'awesome_print'
 #Encrypt menggunakan Gem Bcrypt  
 gem 'bcrypt'
 
+gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+
 # Pagination 
 gem 'will_paginate', '~> 3.1.0'
 
@@ -39,6 +41,9 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 
 # web server yang mendukung MultiThreading {speed and parallelism} 
 gem 'puma'
+
+# for fast authentication
+gem 'devise'
 
 
 # Seeding yang dipake  QC WIP

@@ -33,9 +33,13 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    
+    @user.is_active ? @user.update_attributes(is_active: false) : @user.update_attributes(is_active: true) 
 
-    redirect_to @user
+    # Usahakan jangan Destroy
+    # @user.destroy
+
+    redirect_to action: "index"
 
   end
 

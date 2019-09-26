@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  # get 'rules/index'
+
+  # get 'rules/new'
+
+  # get 'rules/destroy'
+
+  # get 'rules/create'
+
+  # get 'rules/edit'
+
+  # get 'rules/update'
+
+  resources :rules
+
+  get 'rules', to: 'rules#index', as: 'faq'
+
   # get 'users/index'
 
   # get 'users/show'
