@@ -97,7 +97,7 @@ GEM
     multi_json (1.13.1)
     nio4r (2.3.1)
       mini_portile2 (~> 2.4.0)
-    nokogiri (1.9.1)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     parallel (1.17.0)
@@ -220,7 +220,7 @@ DEPENDENCIES
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
   jbuilder (~> 2.0)
   jquery-rails
-  nokogiri (~> 1.6, >= 1.6.8)
+  nokogiri (~> 1.10)
   puma
   rails (= 4.2.7)
   sass-rails (~> 5.0)
