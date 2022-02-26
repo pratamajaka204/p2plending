@@ -28,7 +28,7 @@ gem 'awesome_print'
 #Encrypt menggunakan Gem Bcrypt  
 gem 'bcrypt'
 
-gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'nokogiri', '~> 1.13'
 
 # Pagination 
 gem 'will_paginate', '~> 3.1.0'
